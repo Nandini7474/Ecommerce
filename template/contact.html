@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} contact {% endblock title %}
+{% block body %}
+
+<div class="container"
+    style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM4vrSB0M2tyezKL_VeGYeHu1biINap34Esw&usqp=CAU); padding: 5%;">
+    <div class="container-fluid  text-center " style="padding: 5%;
+        background-color: #aca77f;"> 
+
+        <h1>Contact us</h1>
+ <form  method="POST" action="/contact/">
+      {% csrf_token %}
+        <div class="mb-3 ">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Name">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Contact no.</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="+91">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Write your inquery and suggestion down
+                below</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" style="
+            font-size: x-large;
+            background-color: green;
+            border-radius: 20%;">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+{% endblock body %}
